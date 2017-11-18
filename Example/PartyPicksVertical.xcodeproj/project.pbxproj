@@ -104,7 +104,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "Ricieri ME";
+				ORGANIZATIONNAME = PartyWith;
 				TargetAttributes = {
 					4AB5837F1FC071BA00514B27 = {
 						CreatedOnToolsVersion = 9.1;
