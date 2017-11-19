@@ -63,10 +63,6 @@ extension ViewControllerDataSource : PartyPicksVerticalFlowLayoutDelegate {
         return cellWidthFor(text: object)
     }
     
-    func didPreparedFlowLayout() {
-        // Place any code you want to perfom after the layout is complete here
-    }
-    
     private func cellWidthFor(text: String) -> CGFloat {
         
         let label = UILabel(frame: CGRect.zero)

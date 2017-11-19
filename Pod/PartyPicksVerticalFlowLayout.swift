@@ -131,7 +131,7 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
         contentHeight += contentInset.bottom
         
         // Fire delegate
-        delegate?.didPreparedFlowLayout()
+        delegate?.didPrepareFlowLayout?()
     }
     
     // MARK: - 🤘🦄 Layout
@@ -170,7 +170,7 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
 /**
  *  PartyPicksVerticalFlowLayout's Delegate
  */
-public protocol PartyPicksVerticalFlowLayoutDelegate {
+@objc public protocol PartyPicksVerticalFlowLayoutDelegate {
     
     /**
      * Tells the flow layout which should be the width for a given cell.
@@ -180,7 +180,7 @@ public protocol PartyPicksVerticalFlowLayoutDelegate {
     /**
      * Tells the delegate when flow layout is all set.
      */
-    func didPreparedFlowLayout()
+    @objc optional func didPrepareFlowLayout()
 }
 
 
