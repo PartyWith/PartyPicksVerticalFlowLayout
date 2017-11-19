@@ -39,8 +39,7 @@ To run the example project, clone the repo. No Cocoapods setup needed, the files
 
 You can easily set your `UICollectionView`'s Flow Layout in your storyboard:
 
-<img src="http://felipe.ricieri.me/pods/ppvfl_sb
-.png" alt="Example">
+<img src="http://felipe.ricieri.me/pods/ppvfl_storyboard.png" alt="Storyboard settings">
 
 In your `UIViewController`, you'll **need** to implement the `delegate` property:
 
