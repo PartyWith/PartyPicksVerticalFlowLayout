@@ -36,7 +36,7 @@ To run the example project, clone the repo. No Cocoapods setup needed, the files
 
 MIT License
 
-Copyright (c) 2017 Felipe Ricieri
+Copyright (c) 2017 PartyWith B.V.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
