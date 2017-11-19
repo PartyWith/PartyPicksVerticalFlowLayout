@@ -16,7 +16,7 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
     /**
      * Delegate is required. Here you will define the dynamic width for cells
      */
-    open var delegate: PartyPicksVerticalFlowLayoutDelegate!
+    open var delegate : PartyPicksVerticalFlowLayoutDelegate!
     
     /**
      * Space between cells (default is 5px)
@@ -26,29 +26,37 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
     /**
      * Cells height (default is 45px)
      */
-    open var cellHeight: CGFloat = 45
+    open var cellHeight : CGFloat = 45
     
     /**
-     * The content height will be defined automatically by PartyPicksVerticalFlowLayout class
+     * Collection View content inset
      */
-    fileprivate(set) public var contentHeight: CGFloat = 0
+    open var contentInset : UIEdgeInsets = .zero
     
     /**
      * The content width will be defined automatically by PartyPicksVerticalFlowLayout class
      */
-    public var contentWidth: CGFloat {
+    public var contentWidth : CGFloat {
         let insets = collectionView!.contentInset
         return collectionView!.bounds.width - (insets.left + insets.right)
     }
     
-    override open var collectionViewContentSize: CGSize {
+    /**
+     * The content height will be defined automatically by PartyPicksVerticalFlowLayout class
+     */
+    fileprivate(set) public var contentHeight : CGFloat = 0
+    
+    /**
+     * Collection View Content Size
+     */
+    override open var collectionViewContentSize : CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
     /**
      * Attributes cache list
      */
-    private var cache = [UICollectionViewLayoutAttributes]()
+    private var cache : [UICollectionViewLayoutAttributes] = []
     
     
     // MARK: - 🤘🦄  Initialization
@@ -72,6 +80,9 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
      */
     override open func prepare() {
         
+        // Cannot prepare layout without the delegate
+        assert(delegate != nil, "🤘🦄 Warning: 🚨 Delegate is nil. Please provide a delegate.")
+        
         // Starts at line 0
         var line : CGFloat = 0
         
@@ -82,8 +93,10 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
             
             // ... we draw the frame
             var frame = CGRect.zero
-            frame.size.width = delegate.collectionView(collectionView: collectionView!, widthForCellAt: indexPath, withHeight: cellHeight)
+            frame.size.width = delegate.collectionView(collectionView!, widthForCellAt: indexPath, withHeight: cellHeight)
             frame.size.height = cellHeight
+            frame.origin.x = contentInset.left
+            frame.origin.y = contentInset.top
             
             if  index > 0 {
                 
@@ -96,11 +109,12 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
                 if  lineWidth > collectionView!.bounds.width {
                     // Defines the correct X position (another line)
                     line += 1
-                    frame.origin.x = 0
+                    frame.origin.x = contentInset.left
                 }
                 
                 // Defines the correct Y position
                 frame.origin.y = line * (cellHeight + cellSpacing)
+                frame.origin.y += contentInset.top
             }
             
             // Sets the attribute
@@ -113,6 +127,8 @@ open class PartyPicksVerticalFlowLayout : UICollectionViewFlowLayout {
         
         // Update content height
         contentHeight = line * (cellHeight + cellSpacing)
+        contentHeight += contentInset.top
+        contentHeight += contentInset.bottom
         
         // Fire delegate
         delegate?.didPreparedFlowLayout()
@@ -159,11 +175,13 @@ public protocol PartyPicksVerticalFlowLayoutDelegate {
     /**
      * Tells the flow layout which should be the width for a given cell.
      */
-    func collectionView(collectionView: UICollectionView, widthForCellAt indexPath: IndexPath, withHeight height: CGFloat) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView, widthForCellAt indexPath: IndexPath, withHeight height: CGFloat) -> CGFloat
     
     /**
      * Tells the delegate when flow layout is all set.
      */
     func didPreparedFlowLayout()
 }
+
+
 
