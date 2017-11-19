@@ -7,7 +7,7 @@
 
 UICollectionViewFlowLayout used in PartyWith iOS App's Party Picks section (edit mode)
 
-<img src="http://felipe.ricieri.me/pods/partypicksverticalflowlayout.png" alt="Example">
+<img src="http://felipe.ricieri.me/pods/partypicksverticalflowlayout2.png" alt="Example">
 
 ## Installation
 
