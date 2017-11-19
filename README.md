@@ -39,7 +39,7 @@ To run the example project, clone the repo. No Cocoapods setup needed, the files
 
 You can easily set your `UICollectionView`'s Flow Layout in your storyboard:
 
-<img src="http://felipe.ricieri.me/pods/ppvfl_storyboard.png" alt="Storyboard settings">
+<img src="http://felipe.ricieri.me/pods/ppvfl_sbs.png" alt="Storyboard settings">
 
 In your `UIViewController`, you'll **need** to implement the `delegate` property:
 
@@ -109,13 +109,9 @@ Please look into the example project for more details about the implementation.
 Pull Requests are welcome 🙂. Let us know your thoughts!
 
 🍎 Download the App in App Store: https://itunes.apple.com/us/app/id562560874?mt=8
-
 🤖 Download the App in Google Play: https://play.google.com/store/apps/details?id=com.pwal
-
 🐦 Follow us in Twitter: https://twitter.com/partywithapp
-
 👤 Like our page in Facebook: https://www.facebook.com/PartyWith
-
 📬 Got feedback? Send us a message to: info@partywith.co
 
 
