@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/PartyPicksVerticalFlowLayout.svg?style=flat)](http://cocoapods.org/pods/PartyPicksVerticalFlowLayout)
 [![Platform](https://img.shields.io/cocoapods/p/PartyPicksVerticalFlowLayout.svg?style=flat)](http://cocoapods.org/pods/PartyPicksVerticalFlowLayout)
 
-UICollectionViewFlowLayout used in Party Picks section (edit mode)
+UICollectionViewFlowLayout used in PartyWith iOS App's Party Picks section (edit mode)
 
 <img src="http://felipe.ricieri.me/pods/partypicksverticalflowlayout.png" alt="Example">
 
