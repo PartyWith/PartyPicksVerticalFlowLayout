@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PartyPicksVerticalFlowLayout"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "UICollectionViewFlowLayout used in PartyWith iOS App's Party Picks section (edit mode)"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  Now you can have the same behavior PartyWith has in Party Picks section (edit mode)!
+  UICollectionViewFlowLayout used in PartyWith iOS App's Party Picks section (edit mode). Now you can have the same behavior PartyWith has in Party Picks section (edit mode)!
                    DESC
 
   s.homepage     = "https://github.com/PartyWith/PartyPicksVerticalFlowLayout"
