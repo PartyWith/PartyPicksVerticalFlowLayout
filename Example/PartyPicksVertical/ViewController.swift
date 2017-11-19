@@ -23,8 +23,8 @@ class ViewController: UIViewController {
             flowLayout.delegate = dataSource
             // Additional setups
             flowLayout.cellHeight = 40
-            flowLayout.cellSpacing = 10
-            flowLayout.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            flowLayout.cellSpacing = 8
+            flowLayout.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         }
     }
 }
@@ -33,10 +33,10 @@ class ViewController: UIViewController {
 class ViewControllerDataSource : NSObject, UICollectionViewDataSource {
     
     private var source : [String] = [
-        "Amsterdam", "Berlin", "London", "New York", "San Francisco", "Paris", "Sydney", "Los Angeles", "São Paulo", "Rio de Janeiro",
-        "Amsterdam", "Berlin", "London", "New York", "San Francisco", "Paris", "Sydney", "Los Angeles", "São Paulo", "Rio de Janeiro",
-        "Amsterdam", "Berlin", "London", "New York", "San Francisco", "Paris", "Sydney", "Los Angeles", "São Paulo", "Rio de Janeiro",
-        "Amsterdam", "Berlin", "London", "New York", "San Francisco", "Paris", "Sydney", "Los Angeles", "São Paulo", "Rio de Janeiro"
+        "Amsterdam 🇳🇱", "New York 🇺🇸", "London 🇬🇧", "Berlin 🇩🇪", "Barcelona 🇪🇸", "Lisbon 🇵🇹", "Rio de Janeiro 🇧🇷", "Sydney 🇦🇺", "Paris 🇫🇷", "São Paulo 🇧🇷",
+        "Milan 🇮🇹", "Toronto 🇨🇦", "Bogotá 🇨🇴", "Moscow 🇷🇺", "San Francisco 🇺🇸", "Hague 🇳🇱", "Curitiba 🇧🇷", "Melbourne 🇦🇺", "Los Angeles 🇺🇸",
+        "New Delhi 🇮🇳", "Vienna 🇦🇹", "Lyon 🇫🇷", "Singapore 🇸🇬", "Zürich 🇨🇭", "Maceió 🇧🇷", "Cairo 🇪🇬", "Rehovot 🇮🇱", "Chicago 🇺🇸",
+        "Seoul 🇰🇷", "Taipei 🇹🇼", "Bruxelles 🇧🇪", "Shanghai 🇨🇳", "Marbella 🇪🇸", "Karachi 🇵🇰", "Istanbul 🇹🇷"
     ]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,12 +70,12 @@ extension ViewControllerDataSource : PartyPicksVerticalFlowLayoutDelegate {
     private func cellWidthFor(text: String) -> CGFloat {
         
         let label = UILabel(frame: CGRect.zero)
-        label.font = UIFont.systemFont(ofSize: 17.0)
+        label.font = UIFont.systemFont(ofSize: 16.0)
         label.text = text
         label.sizeToFit()
         
         var rect = label.intrinsicContentSize
-        rect.width += 30 // Padding
+        rect.width += 32 // Padding
         let newWidth = rect.width.rounded()
         
         return newWidth
